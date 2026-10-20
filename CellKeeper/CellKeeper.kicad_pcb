@@ -96650,7 +96650,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x24, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "TE 070 Multilock 24-position right-angle PCB header, TE circuit numbering, pins drawn as on the PCB"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -96812,8 +96812,8 @@
 			(layer "F.Fab")
 			(uuid "357b6bb7-067f-423e-883f-6e28e8a46f96")
 		)
-		(fp_text user "14"
-			(at 4.768898 4.600001 180)
+		(fp_text user "10"
+			(at 8.7019 4.6 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "61d04339-c8a7-453d-b85f-7b9fbddd2a86")
@@ -96824,8 +96824,8 @@
 				)
 			)
 		)
-		(fp_text user "28"
-			(at 4.768898 0 180)
+		(fp_text user "24"
+			(at 8.7019 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "5131b8cd-e322-454d-be88-1d0ef271734e")
@@ -96837,7 +96837,7 @@
 			)
 		)
 		(fp_text user "1"
-			(at -45.578298 4.600001 180)
+			(at -53.1981 4.6 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "d5971cff-9aaf-40bc-a660-cacd560674bf")
@@ -96848,8 +96848,8 @@
 				)
 			)
 		)
-		(fp_text user "15"
-			(at -45.578298 0 180)
+		(fp_text user "11"
+			(at -53.1981 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "5cadb2ba-1948-4bd4-8bf4-bfbafb19babf")
@@ -96860,8 +96860,8 @@
 				)
 			)
 		)
-		(fp_text user "14"
-			(at 4.768898 4.600001 0)
+		(fp_text user "10"
+			(at 8.7019 4.6 0)
 			(unlocked yes)
 			(layer "B.SilkS")
 			(uuid "0ed83bf6-4a50-4aa7-ba9e-e8d461eea459")
@@ -96873,8 +96873,8 @@
 				(justify mirror)
 			)
 		)
-		(fp_text user "28"
-			(at 4.768898 0 0)
+		(fp_text user "24"
+			(at 8.7019 0 0)
 			(unlocked yes)
 			(layer "B.SilkS")
 			(uuid "9b3715c2-8d22-4955-8157-6aa5f8d8e619")
@@ -96887,7 +96887,7 @@
 			)
 		)
 		(fp_text user "1"
-			(at -45.578298 4.600001 0)
+			(at -53.1981 4.6 0)
 			(unlocked yes)
 			(layer "B.SilkS")
 			(uuid "e400b7f7-b9da-480d-8617-b219711ff0a9")
@@ -96899,8 +96899,8 @@
 				(justify mirror)
 			)
 		)
-		(fp_text user "15"
-			(at -45.578298 0 0)
+		(fp_text user "11"
+			(at -53.1981 0 0)
 			(unlocked yes)
 			(layer "B.SilkS")
 			(uuid "913687b6-08c9-421d-9d90-178e6d5bea3f")
@@ -96912,8 +96912,8 @@
 				(justify mirror)
 			)
 		)
-		(fp_text user "14"
-			(at 4.768898 4.600001 180)
+		(fp_text user "10"
+			(at 8.7019 4.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "640a9538-581e-4e2c-87cc-6acb7a9eba30")
@@ -96924,8 +96924,8 @@
 				)
 			)
 		)
-		(fp_text user "28"
-			(at 4.768898 0 180)
+		(fp_text user "24"
+			(at 8.7019 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "5838ddc1-ddf5-4b87-88fe-78a2917743f8")
@@ -96949,7 +96949,7 @@
 			)
 		)
 		(fp_text user "1"
-			(at -45.578298 4.600001 180)
+			(at -53.1981 4.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "01d52759-e997-4238-ad3e-82edb4c63d1d")
@@ -96960,8 +96960,8 @@
 				)
 			)
 		)
-		(fp_text user "15"
-			(at -45.578298 0 180)
+		(fp_text user "11"
+			(at -53.1981 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "4d9f16c0-b44e-49c0-bc1f-cd6200318fba")
@@ -97112,69 +97112,63 @@
 			(layers "*.Cu" "*.Mask")
 			(uuid "0320a28b-9172-4e1f-9371-68fc511e6e05")
 		)
-		(pad "1" thru_hole circle
+		(pad "10" thru_hole circle
 			(at 6.399322 4.600001 180)
 			(size 1.524 1.524)
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Batt Positive")
-			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "7ef761e9-910c-4283-9cf0-6ede5833a406")
 		)
-		(pad "4" thru_hole circle
+		(pad "7" thru_hole circle
 			(at -15.1 4.600001 180)
 			(size 1.524 1.524)
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "FC Positive")
-			(pinfunction "Pin_4_4")
 			(pintype "passive")
 			(uuid "ed5149f7-b1a0-463d-8b09-7dec122baac4")
 		)
-		(pad "7" thru_hole circle
+		(pad "4" thru_hole circle
 			(at -29.398782 4.600001 180)
 			(size 1.524 1.524)
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "FC Negative")
-			(pinfunction "Pin_7_7")
 			(pintype "passive")
 			(uuid "f0cc802d-9bcc-4efa-a88b-8f2f7f345910")
 		)
-		(pad "10" thru_hole circle
+		(pad "1" thru_hole circle
 			(at -50.898104 4.600001 180)
 			(size 1.524 1.524)
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Batt Negative")
-			(pinfunction "Pin_10_10")
 			(pintype "passive")
 			(uuid "2aa5c345-ff83-4034-b27c-04035821d731")
 		)
-		(pad "13" thru_hole circle
+		(pad "22" thru_hole circle
 			(at -0.60041 0 180)
 			(size 1.524 1.524)
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Link Positive")
-			(pinfunction "Pin_13_13")
 			(pintype "passive")
 			(uuid "40ee59dc-e54b-4104-ad02-f8d4a956aea2")
 		)
-		(pad "22" thru_hole circle
+		(pad "13" thru_hole circle
 			(at -41.898376 0 180)
 			(size 1.524 1.524)
 			(drill 1.016)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Link Negative")
-			(pinfunction "Pin_22_22")
 			(pintype "passive")
 			(uuid "e18ee720-521d-4fef-aa30-51bc096f1276")
 		)
