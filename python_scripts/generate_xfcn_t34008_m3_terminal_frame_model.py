@@ -2,11 +2,34 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from build123d import Box, Color, Compound, Cylinder, Pos, Torus, export_step, fillet
+from build123d import (
+    Align,
+    Axis,
+    Box,
+    Color,
+    Compound,
+    Cone,
+    Cylinder,
+    Helix,
+    Line,
+    Plane,
+    Polygon,
+    Pos,
+    Rot,
+    ThreePointArc,
+    Torus,
+    chamfer,
+    export_step,
+    extrude,
+    fillet,
+    make_face,
+    revolve,
+    sweep,
+)
 
 
 PROJECT = Path(__file__).resolve().parents[1]
-SHAPES_DIR = PROJECT / "CellKeeper.3dshapes"
+SHAPES_DIR = PROJECT / "lib" / "CellKeeper.3dshapes"
 STEP_PATH = SHAPES_DIR / "XFCN_T34008_M3_Terminal_Frame_PCB.step"
 
 # Dimensions from the T34008 M3 terminal frame drawing, in millimeters.
@@ -27,16 +50,24 @@ M3_THREAD_MINOR_DIAMETER_MM = 2.50
 M3_EMBOSS_DIAMETER_MM = 4.20
 M3_CENTER_TOTAL_THICKNESS_MM = 2.20
 M3_UNDERSIDE_EMBOSS_HEIGHT_MM = M3_CENTER_TOTAL_THICKNESS_MM - SHEET_THICKNESS_MM
+# M3 Phillips pan head screw, ISO 7045 (dk 5.6, k 2.4) with an H1 recess.
 SCREW_HEAD_DIAMETER_MM = 5.60
-SCREW_HEAD_HEIGHT_MM = 2.20
+SCREW_HEAD_HEIGHT_MM = 2.40
+SCREW_HEAD_FLANK_HEIGHT_MM = 1.30  # straight-ish side before the domed crown
+SCREW_HEAD_FLANK_TOP_RADIUS_MM = 2.62
 SCREW_HEAD_UNDERSIDE_GAP_MM = 1.00
 SCREW_THREAD_LENGTH_MM = 5.00
 SCREW_THREAD_PITCH_MM = 0.50
-SCREW_RECESS_DEPTH_MM = 0.45
-SCREW_RECESS_WIDTH_MM = 0.55
+SCREW_THREAD_MINOR_RADIUS_MM = 1.19
+SCREW_THREAD_RUNOUT_MM = 0.30
+SCREW_TIP_CHAMFER_MM = 0.30
+PHILLIPS_RECESS_DIAMETER_MM = 3.00
+PHILLIPS_WING_WIDTH_MM = 0.70
+PHILLIPS_RECESS_DEPTH_MM = 1.75
+PHILLIPS_CONE_TOP_RADIUS_MM = 0.85
 
 METAL_COLOR = (0.74, 0.72, 0.66)
-SCREW_COLOR = (0.55, 0.55, 0.52)
+SCREW_COLOR = (0.72, 0.73, 0.75)  # bright zinc-plated steel
 
 
 def with_color(part, color: tuple[float, float, float] = METAL_COLOR):
@@ -80,49 +111,65 @@ def fillet_outer_bend_edges(part, body_x_min: float, body_x_max: float):
 
 def make_m3_phillips_screw(center_x: float, center_y: float):
     head_bottom_z = BODY_HEIGHT_MM + SCREW_HEAD_UNDERSIDE_GAP_MM
-    head_top_z = head_bottom_z + SCREW_HEAD_HEIGHT_MM
-    thread_bottom_z = head_bottom_z - SCREW_THREAD_LENGTH_MM
 
-    shank = Pos(center_x, center_y, (head_bottom_z + thread_bottom_z) / 2.0) * Cylinder(
-        M3_THREAD_MAJOR_DIAMETER_MM / 2.0,
-        SCREW_THREAD_LENGTH_MM,
+    major_r = M3_THREAD_MAJOR_DIAMETER_MM / 2.0
+    minor_r = SCREW_THREAD_MINOR_RADIUS_MM
+
+    # Pan head: near-vertical flank rising into a domed crown, revolved about Z.
+    flank_top = (SCREW_HEAD_FLANK_TOP_RADIUS_MM, SCREW_HEAD_FLANK_HEIGHT_MM)
+    crown = (0.0, SCREW_HEAD_HEIGHT_MM)
+    head_outline = (
+        Line((0.0, 0.0), (SCREW_HEAD_DIAMETER_MM / 2.0, 0.0))
+        + Line((SCREW_HEAD_DIAMETER_MM / 2.0, 0.0), flank_top)
+        + ThreePointArc(flank_top, (1.60, 2.20), crown)
+        + Line(crown, (0.0, 0.0))
     )
+    head = revolve(Plane.XZ * make_face(head_outline), axis=Axis.Z)
+    head = softened(head, 0.08)
 
-    head = Pos(center_x, center_y, (head_bottom_z + head_top_z) / 2.0) * Cylinder(
-        SCREW_HEAD_DIAMETER_MM / 2.0,
-        SCREW_HEAD_HEIGHT_MM,
+    # H1 Phillips recess: two crossed slots with sloped floors plus a center cone.
+    top = SCREW_HEAD_HEIGHT_MM
+    half = PHILLIPS_RECESS_DIAMETER_MM / 2.0
+    slot = Plane.XZ * Polygon(
+        (-half, top + 0.5),
+        (half, top + 0.5),
+        (half, top - 0.45),
+        (0.32, top - PHILLIPS_RECESS_DEPTH_MM + 0.15),
+        (-0.32, top - PHILLIPS_RECESS_DEPTH_MM + 0.15),
+        (-half, top - 0.45),
+        align=None,
     )
-    head = softened(head, 0.16)
-
-    recess_z = head_top_z - SCREW_RECESS_DEPTH_MM / 2.0 + 0.01
-    recess_length = SCREW_HEAD_DIAMETER_MM * 0.72
-    phillips_recess = Pos(center_x, center_y, recess_z) * Box(
-        recess_length,
-        SCREW_RECESS_WIDTH_MM,
-        SCREW_RECESS_DEPTH_MM,
+    slot = extrude(slot, amount=PHILLIPS_WING_WIDTH_MM / 2.0, both=True)
+    recess = slot + Rot(0, 0, 90) * slot
+    cone_height = PHILLIPS_RECESS_DEPTH_MM + 0.5
+    recess += Pos(0, 0, top - PHILLIPS_RECESS_DEPTH_MM) * Cone(
+        0.12, PHILLIPS_CONE_TOP_RADIUS_MM + 0.5 * 0.55, cone_height,
+        align=(Align.CENTER, Align.CENTER, Align.MIN),
     )
-    phillips_recess += Pos(center_x, center_y, recess_z) * Box(
-        SCREW_RECESS_WIDTH_MM,
-        recess_length,
-        SCREW_RECESS_DEPTH_MM,
+    head = head - recess
+
+    # Threaded shank: minor-diameter core with a 60 degree helical thread,
+    # a short runout under the head and a chamfered tip.
+    core = Cylinder(minor_r, SCREW_THREAD_LENGTH_MM, align=(Align.CENTER, Align.CENTER, Align.MAX))
+    core = chamfer(core.edges().group_by(Axis.Z)[0], SCREW_TIP_CHAMFER_MM)
+    thread_height = SCREW_THREAD_LENGTH_MM - SCREW_THREAD_RUNOUT_MM - SCREW_TIP_CHAMFER_MM - 0.2
+    flank = 0.22
+    thread_profile = Plane.XZ * Polygon(
+        (minor_r - 0.05, -flank),
+        (major_r, -0.03),
+        (major_r, 0.03),
+        (minor_r - 0.05, flank),
+        align=None,
     )
+    helix = Helix(pitch=SCREW_THREAD_PITCH_MM, height=thread_height, radius=minor_r)
+    thread = sweep(thread_profile, path=helix, is_frenet=True)
+    thread = Pos(0, 0, -SCREW_THREAD_LENGTH_MM + SCREW_TIP_CHAMFER_MM + 0.2) * thread
+    runout = Cylinder(major_r - 0.05, SCREW_THREAD_RUNOUT_MM, align=(Align.CENTER, Align.CENTER, Align.MAX))
 
-    screw = (head + shank) - phillips_recess
-    screw = softened(screw, 0.04)
-    screw = with_color(screw, SCREW_COLOR)
-
-    parts = [screw]
-    thread_start_z = thread_bottom_z + SCREW_THREAD_PITCH_MM
-    ring_count = int((SCREW_THREAD_LENGTH_MM - SCREW_THREAD_PITCH_MM) / SCREW_THREAD_PITCH_MM)
-    for index in range(ring_count):
-        thread_z = thread_start_z + index * SCREW_THREAD_PITCH_MM
-        thread_ring = Pos(center_x, center_y, thread_z) * Torus(
-            M3_THREAD_MAJOR_DIAMETER_MM / 2.0,
-            0.025,
-        )
-        parts.append(with_color(thread_ring, SCREW_COLOR))
-
-    return parts
+    # The swept thread is kept as its own solid: fusing it to the core fails in OCCT.
+    screw = Pos(center_x, center_y, head_bottom_z) * (head + core + runout)
+    thread = Pos(center_x, center_y, head_bottom_z) * thread
+    return [with_color(screw, SCREW_COLOR), with_color(thread, SCREW_COLOR)]
 
 
 def make_model() -> Compound:

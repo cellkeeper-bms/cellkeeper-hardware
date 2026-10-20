@@ -16,22 +16,27 @@ KiCad PCB design for the **CellKeeper Battery Management System**, a replacement
 
 ## Repository Contents
 
+Three boards, each its own KiCad project. They share no copper: the hat and the precharge board
+connect to the rest of the system by wires and lugs.
+
 | Path | Description |
 |------|-------------|
-| `CellKeeper.kicad_pro` | KiCad project file |
-| `CellKeeper.kicad_sch` | Schematic |
-| `CellKeeper.kicad_pcb` | PCB layout |
-| `CellKeeper_Local.kicad_sym` / `CellKeeper_Local.pretty/` | Local symbol and footprint libraries |
-| `CellKeeper.3dshapes/` | 3D models |
+| `CellKeeper/` | Main controller board (`CellKeeper.kicad_pro`), with its `production/` outputs |
+| `isoSPI-Hat/` | isoSPI hat for a Raspberry Pi Pico: SP3485 / AM26LV32 / HM2113 transformer to the BMB connector |
+| `Precharge/` | Precharge board: six PTCs (three parallel strings of two) between M8 lugs, plus the HV system wiring diagram |
+| `lib/` | Shared `CellKeeper_Local` symbol and footprint libraries and `CellKeeper.3dshapes` 3D models |
 | `graphics/` | Silkscreen artwork and images |
-| `production/` | Manufacturing outputs |
 | `python_scripts/` | Utility scripts |
 
 ## Getting Started
 
 1. Install [KiCad 10.0+](https://www.kicad.org/download/)
 2. Clone this repository
-3. Open `CellKeeper.kicad_pro` — project libraries load from the local `sym-lib-table` and `fp-lib-table`
+3. Open the board's `.kicad_pro` in `CellKeeper/`, `isoSPI-Hat/` or `Precharge/`. Each project's
+   `sym-lib-table` / `fp-lib-table` load the shared libraries from `../lib`.
+
+To order the boards on one panel, panelise the finished boards at order time (e.g. with KiKit)
+rather than merging the projects again.
 
 ## Safety
 

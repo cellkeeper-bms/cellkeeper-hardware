@@ -3,7 +3,7 @@
 Localize KiCad symbol, footprint, and 3D model references for this project.
 
 The script is intentionally project-scoped: it copies only items referenced by
-CellKeeper.kicad_sch / CellKeeper.kicad_pcb, preserves existing project-local
+CellKeeper/CellKeeper.kicad_sch / .kicad_pcb (the main board), preserves existing project-local
 libraries, and rewrites external references to a new CellKeeper_Local library.
 """
 
@@ -16,13 +16,15 @@ from pathlib import Path
 
 
 PROJECT = Path(__file__).resolve().parent.parent
-SCH = PROJECT / "CellKeeper.kicad_sch"
-PCB = PROJECT / "CellKeeper.kicad_pcb"
-SYM_TABLE = PROJECT / "sym-lib-table"
-FP_TABLE = PROJECT / "fp-lib-table"
-LOCAL_SYM_LIB = PROJECT / "CellKeeper_Local.kicad_sym"
-LOCAL_FP_LIB = PROJECT / "CellKeeper_Local.pretty"
-LOCAL_3D_DIR = PROJECT / "CellKeeper.3dshapes"
+MAIN = PROJECT / "CellKeeper"  # main board project; isoSPI-Hat/ and Precharge/ share lib/
+LIB = PROJECT / "lib"
+SCH = MAIN / "CellKeeper.kicad_sch"
+PCB = MAIN / "CellKeeper.kicad_pcb"
+SYM_TABLE = MAIN / "sym-lib-table"
+FP_TABLE = MAIN / "fp-lib-table"
+LOCAL_SYM_LIB = LIB / "CellKeeper_Local.kicad_sym"
+LOCAL_FP_LIB = LIB / "CellKeeper_Local.pretty"
+LOCAL_3D_DIR = LIB / "CellKeeper.3dshapes"
 
 LOCAL_SYM_NICK = "CellKeeper_Local"
 LOCAL_FP_NICK = "CellKeeper_Local"
@@ -477,7 +479,7 @@ def copy_and_rewrite_models(text: str, dry_run: bool) -> tuple[str, dict[str, Pa
 
     def replace(match: re.Match[str]) -> str:
         raw = match.group(1)
-        if raw.startswith("${KIPRJMOD}/CellKeeper.3dshapes/"):
+        if raw.startswith("${KIPRJMOD}/../lib/CellKeeper.3dshapes/"):
             return match.group(0)
 
         source = resolve_model_path(raw)
@@ -496,7 +498,7 @@ def copy_and_rewrite_models(text: str, dry_run: bool) -> tuple[str, dict[str, Pa
             LOCAL_3D_DIR.mkdir(exist_ok=True)
             if not dest.exists():
                 shutil.copy2(source, dest)
-        return f'(model "${{KIPRJMOD}}/CellKeeper.3dshapes/{dest_name}"'
+        return f'(model "${{KIPRJMOD}}/../lib/CellKeeper.3dshapes/{dest_name}"'
 
     rewritten = re.sub(r'\(model "([^"]+)"', replace, text)
     return rewritten, copied, missing
@@ -575,12 +577,12 @@ def main() -> int:
     sym_table = ensure_table_entry(
         read_text(SYM_TABLE),
         LOCAL_SYM_NICK,
-        "${KIPRJMOD}/CellKeeper_Local.kicad_sym",
+        "${KIPRJMOD}/../lib/CellKeeper_Local.kicad_sym",
     )
     fp_table = ensure_table_entry(
         read_text(FP_TABLE),
         LOCAL_FP_NICK,
-        "${KIPRJMOD}/CellKeeper_Local.pretty",
+        "${KIPRJMOD}/../lib/CellKeeper_Local.pretty",
     )
 
     if not dry_run:

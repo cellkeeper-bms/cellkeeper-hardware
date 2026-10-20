@@ -1,0 +1,3854 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "5d962221-5e0a-481f-afc5-67c7ec101fc1")
+	(paper "User" 1016 635)
+	(title_block
+		(title "CellKeeper Precharge")
+		(date "2026-06-30")
+		(rev "1.0")
+	)
+	(lib_symbols
+		(symbol "CellKeeper_Local:Device__Battery"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "BT"
+				(at 2.54 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Battery"
+				(at 2.54 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 1.524 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 1.524 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Multiple-cell battery"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "batt voltage-source cell"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device__Battery_0_1"
+				(rectangle
+					(start -2.286 1.778)
+					(end 2.286 1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -2.286 -1.27)
+					(end 2.286 -1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.524 1.016)
+					(end 1.524 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.524 -2.032)
+					(end 1.524 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.508) (xy 0 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.016) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 3.048) (xy 1.778 3.048)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 3.556) (xy 1.27 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device__Battery_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "CellKeeper_Local:Device__Fuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device__Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device__Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "CellKeeper_Local:Device__R_Shunt"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at -2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_Shunt"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Shunt resistor with Kelvin connections"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res shunt resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*Shunt*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device__R_Shunt_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 1.27 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device__R_Shunt_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 2.54 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -2.54 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "CellKeeper_Local:Device__Thermistor_PTC"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TH"
+				(at -4.064 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Thermistor_PTC"
+				(at 3.048 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.27 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Temperature dependent resistor, positive temperature coefficient"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "resistor PTC thermistor sensor RTD"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*PTC* *Thermistor* PIN?ARRAY* bornier* *Terminal?Block* R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device__Thermistor_PTC_0_1"
+				(arc
+					(start -3.175 2.413)
+					(mid -3.0506 2.3165)
+					(end -3.048 2.159)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -3.048 2.794)
+					(mid -2.9736 2.9736)
+					(end -2.794 3.048)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 3.048)
+					(mid -2.6144 2.9736)
+					(end -2.54 2.794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 2.54)
+					(mid -2.9736 2.6144)
+					(end -3.048 2.794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 1.905)
+					(mid -2.9736 1.9794)
+					(end -3.048 2.159)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.54 2.159)
+					(mid -2.6144 1.9794)
+					(end -2.794 1.905)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.159 2.794)
+					(mid -2.434 2.5608)
+					(end -2.794 2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 2.159) (xy -2.54 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -3.683) (xy -2.54 -1.397) (xy -2.794 -2.159) (xy -2.286 -2.159) (xy -2.54 -1.397) (xy -2.54 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.54) (xy -1.778 1.524) (xy 1.778 -1.524) (xy 1.778 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -3.683) (xy -1.778 -1.397) (xy -2.032 -2.159) (xy -1.524 -2.159) (xy -1.778 -1.397)
+						(xy -1.778 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.016 2.54)
+					(end 1.016 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device__Thermistor_PTC_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "CellKeeper_Local:Mechanical__MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Mechanical__MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Mechanical__MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "CellKeeper_Local:Relay__Fujitsu_FTR-LYAA005x"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "K"
+				(at 11.43 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Fujitsu_FTR-LYAA005x"
+				(at 11.43 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "CellKeeper_Local:Relay_THT__Relay_SPST-NO_Fujitsu_FTR-LYAA005x_FormA_Vertical"
+				(at 11.43 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.fujitsu.com/sg/imagesgig5/ftr-ly.pdf"
+				(at 17.78 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "Relay, SPST Form A, vertical mount, 5-60V coil, 6A, 250VAC, 28 x 5 x 15mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "6A SPST-NO Relay"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Relay*Fujitsu*FTR?LYA*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Relay__Fujitsu_FTR-LYAA005x_0_0"
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 2.54) (xy 6.985 3.175) (xy 7.62 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Relay__Fujitsu_FTR-LYAA005x_0_1"
+				(rectangle
+					(start -10.16 5.08)
+					(end 10.16 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -8.255 1.905)
+					(end -1.905 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.62 -1.905) (xy -2.54 1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy -5.08 1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -5.08) (xy -5.08 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 0) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 3.175 3.81)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 5.08 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Relay__Fujitsu_FTR-LYAA005x_1_1"
+				(pin passive line
+					(at 5.08 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(rectangle
+		(start 580.39 398.78)
+		(end 786.765 565.15)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "5bde2c52-8ad4-4837-a2cd-0d1a449f93f4")
+	)
+	(rectangle
+		(start 601.345 412.115)
+		(end 723.265 530.86)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "78fc6253-93ef-4e5f-ba31-55db30506016")
+	)
+	(text "PTC 440V 56Ω"
+		(exclude_from_sim no)
+		(at 692.912 466.598 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+		)
+		(uuid "1557e39f-5f19-4402-a07f-d08d7f5091d5")
+	)
+	(text "FC positive contactor not used (no 12V connection)"
+		(exclude_from_sim no)
+		(at 696.976 460.756 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2a619869-0f1e-4054-b838-052027415b5d")
+	)
+	(text "pyro is always live"
+		(exclude_from_sim no)
+		(at 627.888 485.394 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4189342c-f0c6-40cc-abe4-7f88fbdaf7dc")
+	)
+	(text "FC negative controls pre-charge bypass"
+		(exclude_from_sim no)
+		(at 694.944 526.796 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "56469f42-ed28-4c32-b226-5c18193f6083")
+	)
+	(text "Inverter connected to FC port"
+		(exclude_from_sim no)
+		(at 741.68 474.472 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "77c198f2-09da-4341-85d4-5ef0834ce4c6")
+	)
+	(text "shunt is always live"
+		(exclude_from_sim no)
+		(at 628.396 470.154 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7c58d0c7-350b-44b4-9312-1061c4c52156")
+	)
+	(text "Positives"
+		(exclude_from_sim no)
+		(at 630.555 533.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+		)
+		(uuid "852bbd20-b263-4657-8757-15962b636656")
+	)
+	(text "PTC max current ~10A\nUnder 1S charge time expected"
+		(exclude_from_sim no)
+		(at 663.448 477.012 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8edef928-925c-4663-aeff-127b45af5816")
+	)
+	(text "Output via Fast Charge Connection"
+		(exclude_from_sim no)
+		(at 660.4 417.068 0)
+		(effects
+			(font
+				(size 4 4)
+			)
+		)
+		(uuid "90d89fb0-620a-4e88-99e6-080bbf04d73c")
+	)
+	(text "Overall HV Battery System Diagram"
+		(exclude_from_sim no)
+		(at 683.768 404.368 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+			)
+		)
+		(uuid "a78fa00e-ce51-44e9-840c-8adbb1d9baca")
+	)
+	(text "jumper wire from existing 63A PCS or heat pump fuse"
+		(exclude_from_sim no)
+		(at 685.546 423.672 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d12d0dd1-decb-40db-99b6-0d3808b7e0f4")
+	)
+	(text "Cells Positive \nAlways Live"
+		(exclude_from_sim no)
+		(at 628.396 431.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e44adc83-fde0-4dbd-aa70-afc4d00d2486")
+	)
+	(text "Negatives"
+		(exclude_from_sim no)
+		(at 720.09 534.035 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+		)
+		(uuid "eac43c0a-e162-447c-a15f-42d6e4ee790d")
+	)
+	(text "Inside Penthouse"
+		(exclude_from_sim no)
+		(at 658.876 409.956 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+		)
+		(uuid "f181067b-fd5e-4fb4-9a39-ea55ee08b908")
+	)
+	(text_box "- need to energize one more contactor constantly\n- not as standard Pre-charge wiring\n"
+		(exclude_from_sim no)
+		(at 678.18 536.448 0)
+		(size 86.995 12.065)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left top)
+		)
+		(uuid "28be00be-0137-4003-b2f4-18233b40b5ba")
+	)
+	(text_box "- No new always live HV wiring\n- FC HV connection easier to wire? (packs with bolts)\n- low amp fuse inside penthouse\n- re-use existing 63A fuse"
+		(exclude_from_sim no)
+		(at 588.518 536.321 0)
+		(size 86.995 26.67)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left top)
+		)
+		(uuid "ffa2d120-72b0-4f6b-bce6-5896289ede6c")
+	)
+	(junction
+		(at 707.39 485.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0fb855c8-eb1b-4803-9a8f-15697724c148")
+	)
+	(junction
+		(at 673.1 440.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "368f902c-bb8c-4299-ac47-d01c7939ce9a")
+	)
+	(junction
+		(at 680.72 485.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "480bfdda-9fc5-49e1-bba3-5e91c710eee2")
+	)
+	(junction
+		(at 668.02 506.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "79a06da6-6d1e-4a7a-96f6-1a82a4640b41")
+	)
+	(junction
+		(at 711.2 509.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "908d0139-2843-43f9-9a86-66c1f53fdc99")
+	)
+	(junction
+		(at 676.91 506.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b3310cd0-31ee-4917-819a-4f0dd7111688")
+	)
+	(junction
+		(at 707.39 443.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b54aa39d-4dcc-4a1e-9f13-f8f9a3da1b05")
+	)
+	(junction
+		(at 668.02 440.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cda135dd-5f3c-4702-9db8-9c317e4f6574")
+	)
+	(wire
+		(pts
+			(xy 673.1 425.45) (xy 673.1 429.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08b8190f-4c3e-48ee-bfcd-85c3c7a01dbb")
+	)
+	(wire
+		(pts
+			(xy 748.03 467.36) (xy 748.03 443.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0aba14a5-61d1-4c0e-98f3-cbc4485b34f6")
+	)
+	(wire
+		(pts
+			(xy 680.72 485.14) (xy 680.72 495.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f96a938-9f29-4f98-b17b-38c9603eaee9")
+	)
+	(wire
+		(pts
+			(xy 676.91 506.73) (xy 687.07 506.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c20c1a9-cbe3-4135-a626-5644c4d71b52")
+	)
+	(wire
+		(pts
+			(xy 707.39 485.14) (xy 707.39 495.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b93626e-8b84-46a5-bb42-336b3ccbf219")
+	)
+	(wire
+		(pts
+			(xy 617.22 438.15) (xy 617.22 439.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a163649-a7ac-4ad1-b6af-fb657504e835")
+	)
+	(wire
+		(pts
+			(xy 655.32 506.73) (xy 668.02 506.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ab04b5a-313e-4092-a9cf-1005c7cb7391")
+	)
+	(wire
+		(pts
+			(xy 673.1 425.45) (xy 707.39 425.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c20ee16-6cb7-49bb-afc9-40fe4b86e227")
+	)
+	(wire
+		(pts
+			(xy 711.2 485.14) (xy 711.2 509.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d37c922-95d3-4fd6-bb7c-e19616213191")
+	)
+	(wire
+		(pts
+			(xy 707.39 425.45) (xy 707.39 443.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b9c2915-99b3-4eb7-98be-a2fe7f9dad0b")
+	)
+	(wire
+		(pts
+			(xy 702.31 509.27) (xy 711.2 509.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bba04d6-9835-4def-aa27-3468e885e472")
+	)
+	(wire
+		(pts
+			(xy 707.39 443.23) (xy 748.03 443.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4db9ed3b-4a7e-43ad-b4df-a9fb3a9bbe6d")
+	)
+	(wire
+		(pts
+			(xy 623.57 514.35) (xy 623.57 504.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f4c3120-89cd-4e1d-a5ce-c60885ddd0ed")
+	)
+	(wire
+		(pts
+			(xy 655.32 440.69) (xy 668.02 440.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "564678c7-ce2a-4f22-ae73-20f083770692")
+	)
+	(wire
+		(pts
+			(xy 688.34 474.98) (xy 699.77 474.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ae31a04-f2ba-46f9-8a37-4bf7b6b88fe8")
+	)
+	(wire
+		(pts
+			(xy 707.39 474.98) (xy 707.39 485.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70069b76-dd2f-49cf-952a-39fe23e991c3")
+	)
+	(wire
+		(pts
+			(xy 668.02 440.69) (xy 673.1 440.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80098ba7-0101-4000-9c48-65bbef3a11c5")
+	)
+	(wire
+		(pts
+			(xy 623.57 514.35) (xy 617.22 514.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "893e5817-86a9-4f02-8c5d-36b16bf00203")
+	)
+	(wire
+		(pts
+			(xy 617.22 469.9) (xy 617.22 486.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9771f897-3a72-4c00-afcb-3f7200a5c30a")
+	)
+	(wire
+		(pts
+			(xy 668.02 427.99) (xy 668.02 440.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "981b7ed5-f373-43a0-adf2-130c45236c42")
+	)
+	(wire
+		(pts
+			(xy 668.02 506.73) (xy 676.91 506.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a107720a-d4a1-4628-8f0d-cbe98d75f811")
+	)
+	(wire
+		(pts
+			(xy 748.03 467.36) (xy 755.65 467.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a442a6ec-4cd3-46ce-907e-e8e36e3f0b5b")
+	)
+	(wire
+		(pts
+			(xy 707.39 485.14) (xy 711.2 485.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0f9a06b-8deb-4bda-8c18-853bc1fdc2b3")
+	)
+	(wire
+		(pts
+			(xy 680.72 474.98) (xy 680.72 485.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4bb36ab-4c7c-47a7-8c92-667e839a8c4c")
+	)
+	(wire
+		(pts
+			(xy 673.1 440.69) (xy 688.34 440.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7a6a8c7-4861-4a38-8e5f-1ef2a6e18f5b")
+	)
+	(wire
+		(pts
+			(xy 676.91 485.14) (xy 676.91 506.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd5fae61-2043-4171-abe9-dc453a73b8fe")
+	)
+	(wire
+		(pts
+			(xy 680.72 485.14) (xy 676.91 485.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd7fb2d8-38da-44c1-9af1-a1684bd24116")
+	)
+	(wire
+		(pts
+			(xy 755.65 480.06) (xy 748.03 480.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce613cd1-cffe-4cb5-919a-13becbb8b7e5")
+	)
+	(wire
+		(pts
+			(xy 748.03 480.06) (xy 748.03 509.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf4b6c47-72ed-4798-9dbb-0b78493107ca")
+	)
+	(wire
+		(pts
+			(xy 617.22 438.15) (xy 640.08 438.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d90530aa-6a1d-4fbf-be7c-91978daeca0d")
+	)
+	(wire
+		(pts
+			(xy 673.1 436.88) (xy 673.1 440.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5c9a6c1-3f68-4eb4-b491-d45ece87f77a")
+	)
+	(wire
+		(pts
+			(xy 711.2 509.27) (xy 748.03 509.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7895ca1-ba9a-4cb1-8a90-195c399ac7e9")
+	)
+	(wire
+		(pts
+			(xy 623.57 504.19) (xy 640.08 504.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8f8aa89-138d-4819-93dd-4ac7cd5d981f")
+	)
+	(wire
+		(pts
+			(xy 688.34 485.14) (xy 699.77 485.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2a99f8f-c4bb-4101-89a9-218cfe0b278e")
+	)
+	(wire
+		(pts
+			(xy 668.02 494.03) (xy 668.02 506.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f73aeb8d-e376-404a-90b7-41e8ccb4df19")
+	)
+	(wire
+		(pts
+			(xy 703.58 443.23) (xy 707.39 443.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd6ddc44-f06f-40fb-9882-92c9d860bb68")
+	)
+	(wire
+		(pts
+			(xy 688.34 495.3) (xy 699.77 495.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe7c79a1-d7c2-49de-9901-b707ff66fd6e")
+	)
+	(label "Batt Positive"
+		(at 636.27 438.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31a4a241-71e3-479c-926c-4e1edd58d4a0")
+	)
+	(label "Link Neg"
+		(at 665.48 506.73 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "793dd096-7923-47f6-a4a0-e45d84063108")
+	)
+	(label "FC Neg"
+		(at 718.82 509.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a7294c4a-15a6-478d-b892-429338826999")
+	)
+	(label "FC Pos"
+		(at 717.55 443.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bed50abc-c8f4-41bc-9d24-e78fe06d3389")
+	)
+	(label "Link Pos"
+		(at 666.75 440.69 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d0335307-d932-4a14-a657-e335238acf27")
+	)
+	(label "Batt Negative"
+		(at 637.54 504.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f65d3d21-836e-4d3e-ab17-2911a8c550e0")
+	)
+	(global_label "Drive Unit Neg"
+		(shape input)
+		(at 668.02 494.03 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "721888cf-2497-4a1c-bbaa-2974fbf40467")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 651.0043 494.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "Drive Unit Pos"
+		(shape input)
+		(at 668.02 427.99 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "af30a836-21ca-436e-9104-789ceecd0791")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 651.1253 427.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Battery")
+		(at 617.22 454.66 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "23c12b97-4b89-444d-8c4b-7b27eaa8f1cb")
+		(property "Reference" "BT2"
+			(at 614.172 453.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~100V Brick"
+			(at 614.172 455.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 617.22 453.136 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 617.22 453.136 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Multiple-cell battery"
+			(at 617.22 454.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "fbe7c3c1-dd5c-418c-9a9c-fce5bdff42e2")
+		)
+		(pin "1"
+			(uuid "795aa828-f048-4ef7-a213-6ce80e62761d")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "BT2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Battery")
+		(at 617.22 499.11 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4e8aa3e4-21be-47e1-a785-b8ace5b0fc36")
+		(property "Reference" "BT3"
+			(at 614.426 497.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~100V Brick"
+			(at 614.426 500.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 617.22 497.586 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 617.22 497.586 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Multiple-cell battery"
+			(at 617.22 499.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "66532ad1-181d-4b39-8bab-7e25948bb7b2")
+		)
+		(pin "1"
+			(uuid "56cdef08-e629-46ea-916f-9d305267c264")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "BT3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Mechanical__MountingHole_Pad")
+		(at 678.18 485.14 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5f47baf3-dc35-4d5b-ac90-df3998a1f2b3")
+		(property "Reference" "H1"
+			(at 674.116 485.394 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 673.862 484.124 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:MountingHole__MountingHole_8.4mm_M8_Pad_Via"
+			(at 678.18 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 678.18 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 678.18 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "364990f9-bd6f-4d66-808e-344935c263c3")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Battery")
+		(at 617.22 509.27 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "769c3dd8-6aa6-4591-bee6-b47a46a31674")
+		(property "Reference" "BT4"
+			(at 614.426 508 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~100V Brick"
+			(at 614.426 510.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 617.22 507.746 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 617.22 507.746 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Multiple-cell battery"
+			(at 617.22 509.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e363cecd-d0b4-477b-bac2-319cb1f0ca08")
+		)
+		(pin "1"
+			(uuid "3e2851d5-3a32-41a5-b595-429069806af2")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "BT4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Thermistor_PTC")
+		(at 684.53 495.3 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7c926f43-c5e6-4ff3-85a3-a677dd86cf02")
+		(property "Reference" "TH3"
+			(at 684.784 490.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "B59451C1130B070"
+			(at 685.038 492.252 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:BMS_Library__RV_Disc_D15.5mm_W7.5mm_P5.0mm"
+			(at 689.61 494.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 684.53 495.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Temperature dependent resistor, positive temperature coefficient"
+			(at 684.53 495.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "PTC 440V 56Ω"
+			(at 684.53 492.252 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C2762811"
+			(at 684.53 495.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c6c9b91c-3aa2-485c-a909-2343a0d0af2d")
+		)
+		(pin "2"
+			(uuid "c85388e4-4224-47a5-9095-2c7c5de96caf")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "TH3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Thermistor_PTC")
+		(at 703.58 474.98 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8c94d3b0-31e7-482c-a9cb-05627b54ec03")
+		(property "Reference" "TH4"
+			(at 703.834 469.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "B59451C1130B070"
+			(at 704.088 471.932 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:BMS_Library__RV_Disc_D15.5mm_W7.5mm_P5.0mm"
+			(at 708.66 473.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 703.58 474.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Temperature dependent resistor, positive temperature coefficient"
+			(at 703.58 474.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "PTC 440V 56Ω"
+			(at 703.58 471.932 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C2762811"
+			(at 703.58 474.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1515e424-b3cb-45b0-b9f6-463c45197836")
+		)
+		(pin "2"
+			(uuid "984ede08-4091-4f8f-a902-0a061358a818")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "TH4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Mechanical__MountingHole_Pad")
+		(at 709.93 485.14 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8d469332-e715-4c2b-a172-2abb6ebb40cb")
+		(property "Reference" "H2"
+			(at 714.248 485.14 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 714.248 486.156 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:MountingHole__MountingHole_8.4mm_M8_Pad_Via"
+			(at 709.93 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 709.93 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 709.93 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dae09fe3-9044-4b45-ad50-63ae09e3ca41")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "Relay__Fujitsu_FTR-LYAA005x_1")
+		(lib_id "CellKeeper_Local:Relay__Fujitsu_FTR-LYAA005x")
+		(at 760.73 472.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9c47c84c-2fed-41ef-b8bc-a1cbf5aaf370")
+		(property "Reference" "K5"
+			(at 762 461.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Inverter"
+			(at 765.556 463.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 772.16 473.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 778.51 476.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Relay, SPST Form A, vertical mount, 5-60V coil, 6A, 250VAC, 28 x 5 x 15mm"
+			(at 761.238 495.554 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "de951e59-cd44-41a6-90e0-b4e4912243b8")
+		)
+		(pin "1"
+			(uuid "7720ebff-9140-4970-ae2c-b3c23ee305bf")
+		)
+		(pin "3"
+			(uuid "fba8dc74-418b-44c6-9a5b-0e71dcff9c93")
+		)
+		(pin "4"
+			(uuid "d5becd3a-5010-4c29-afdc-3f1697a2d24d")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "K5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Thermistor_PTC")
+		(at 684.53 474.98 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a3cf60d9-7ef2-4a9b-949e-d05b00d7bc33")
+		(property "Reference" "TH1"
+			(at 684.784 469.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "B59451C1130B070"
+			(at 685.038 471.932 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:BMS_Library__RV_Disc_D15.5mm_W7.5mm_P5.0mm"
+			(at 689.61 473.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 684.53 474.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Temperature dependent resistor, positive temperature coefficient"
+			(at 684.53 474.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "PTC 440V 56Ω"
+			(at 684.53 471.932 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C2762811"
+			(at 684.53 474.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "63f776f1-6965-4ede-b5d2-99c2df1c4452")
+		)
+		(pin "2"
+			(uuid "145ea91e-db02-4fb7-a0d2-314b2cd508bf")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "TH1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Thermistor_PTC")
+		(at 703.58 495.3 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a6077b99-6bfa-40ea-909f-2c5598264ea3")
+		(property "Reference" "TH6"
+			(at 703.834 490.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "B59451C1130B070"
+			(at 704.088 492.252 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:BMS_Library__RV_Disc_D15.5mm_W7.5mm_P5.0mm"
+			(at 708.66 494.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 703.58 495.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Temperature dependent resistor, positive temperature coefficient"
+			(at 703.58 495.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "PTC 440V 56Ω"
+			(at 703.58 492.252 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C2762811"
+			(at 703.58 495.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "81b7c6b2-348c-493a-a3e4-ac66eabe5009")
+		)
+		(pin "2"
+			(uuid "98463e1f-1be3-48e5-bd21-9b1582a1af6e")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "TH6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__R_Shunt")
+		(at 617.22 464.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bdbd1611-62c4-4548-80d7-7b5ab4470b61")
+		(property "Reference" "R1"
+			(at 625.856 462.534 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "25296nΩ"
+			(at 629.666 464.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 615.442 464.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 617.22 464.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Shunt resistor with Kelvin connections"
+			(at 617.22 464.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "Shunt"
+			(at 623.57 466.852 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "95c26093-f185-4799-b244-2f21a7bebcbf")
+		)
+		(pin "3"
+			(uuid "d2d6c1f1-7408-43d5-8659-93c3bbac2add")
+		)
+		(pin "2"
+			(uuid "4918bb18-ee1d-4f0a-9ba7-2241a27eb4a3")
+		)
+		(pin "4"
+			(uuid "48b59d8f-413d-4982-af4a-f704bfb7e800")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Relay__Fujitsu_FTR-LYAA005x")
+		(at 694.69 514.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ca6d82fb-b6bc-4b38-bc7c-6a82227e8be1")
+		(property "Reference" "K3"
+			(at 693.166 500.38 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "FC Negative"
+			(at 701.04 502.666 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 695.96 502.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 698.5 496.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Relay, SPST Form A, vertical mount, 5-60V coil, 6A, 250VAC, 28 x 5 x 15mm"
+			(at 694.69 514.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "13"
+			(uuid "f0ea0fda-dc4b-4ae8-a6c2-68de989b6ef6")
+		)
+		(pin "A2"
+			(uuid "f2eb8bf9-ce03-4b3f-8473-3a085452d374")
+		)
+		(pin "A1"
+			(uuid "9068afaa-1729-4c3d-b9c6-ad0d068d3800")
+		)
+		(pin "14"
+			(uuid "4128fbc7-25fa-489d-afbc-dba195d0a39a")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "K3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Relay__Fujitsu_FTR-LYAA005x")
+		(at 647.7 511.81 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e2100db2-0d77-4597-9490-97422c930db3")
+		(property "Reference" "K2"
+			(at 644.144 497.84 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Link Negative"
+			(at 648.97 500.126 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 648.97 500.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 651.51 494.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Relay, SPST Form A, vertical mount, 5-60V coil, 6A, 250VAC, 28 x 5 x 15mm"
+			(at 647.7 511.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "13"
+			(uuid "244fd434-abbc-4dbf-bcca-7a0ec7a95566")
+		)
+		(pin "A2"
+			(uuid "35517888-30fd-4e5a-a01d-217482045c33")
+		)
+		(pin "A1"
+			(uuid "c3087720-a420-474e-9b00-ba0c43c20fb2")
+		)
+		(pin "14"
+			(uuid "c1821fb4-e3e5-435d-a3f9-abae26b0fb92")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "K2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Relay__Fujitsu_FTR-LYAA005x")
+		(at 647.7 445.77 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e2a6ef4d-5ec9-40a5-967a-059aeb73401c")
+		(property "Reference" "K1"
+			(at 643.89 431.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Link Positive"
+			(at 648.716 434.086 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 648.97 434.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 651.51 427.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Relay, SPST Form A, vertical mount, 5-60V coil, 6A, 250VAC, 28 x 5 x 15mm"
+			(at 647.7 445.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "13"
+			(uuid "e95d5f5f-e41c-4ef8-bf3a-7125f72fc700")
+		)
+		(pin "A2"
+			(uuid "367d0ee5-94f6-48ba-aec4-b7cebb56abbd")
+		)
+		(pin "A1"
+			(uuid "f8497e7f-e901-4ac2-889e-bef96e20ae5e")
+		)
+		(pin "14"
+			(uuid "586e2bae-e4f1-40d3-bc24-ca33b66f5e4a")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "K1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Thermistor_PTC")
+		(at 703.58 485.14 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ef966015-8866-4037-b22d-cdb8ed163576")
+		(property "Reference" "TH5"
+			(at 703.834 480.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "B59451C1130B070"
+			(at 704.088 482.092 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:BMS_Library__RV_Disc_D15.5mm_W7.5mm_P5.0mm"
+			(at 708.66 483.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 703.58 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Temperature dependent resistor, positive temperature coefficient"
+			(at 703.58 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "PTC 440V 56Ω"
+			(at 703.58 482.092 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C2762811"
+			(at 703.58 485.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0c542967-2c61-43f5-acb8-1a59c4d30416")
+		)
+		(pin "2"
+			(uuid "87edb2fc-b31f-4228-9f2b-3d5125553c0d")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "TH5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Thermistor_PTC")
+		(at 684.53 485.14 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f0c2e1d6-5ead-4f18-a2d5-d4b0ba9fc217")
+		(property "Reference" "TH2"
+			(at 684.784 480.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "B59451C1130B070"
+			(at 685.038 482.092 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "CellKeeper_Local:BMS_Library__RV_Disc_D15.5mm_W7.5mm_P5.0mm"
+			(at 689.61 483.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 684.53 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Temperature dependent resistor, positive temperature coefficient"
+			(at 684.53 485.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "PTC 440V 56Ω"
+			(at 684.53 482.092 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C2762811"
+			(at 684.53 485.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "deb53fcd-b7cc-413e-8d88-139a2ec158c4")
+		)
+		(pin "2"
+			(uuid "26370f79-2992-492e-818f-b20695c7a955")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "TH2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Battery")
+		(at 617.22 444.5 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f2a74dd0-2264-4a42-b09a-dc79cb73d4df")
+		(property "Reference" "BT1"
+			(at 614.172 443.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~100V Brick"
+			(at 614.172 445.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 617.22 442.976 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 617.22 442.976 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Multiple-cell battery"
+			(at 617.22 444.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "64022f0b-7814-47b2-87b5-5b07266188df")
+		)
+		(pin "1"
+			(uuid "0d053928-758c-4c23-8045-3a04d681f73b")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "BT1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Fuse")
+		(at 673.1 433.07 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f3653923-5268-4c2f-833a-02eb3ed33c2a")
+		(property "Reference" "F2"
+			(at 674.37 428.244 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "63A HV DC"
+			(at 675.132 431.292 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 671.322 433.07 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 673.1 433.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 673.1 433.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2723509e-5b5e-4fe9-bf24-39c9a871f2f5")
+		)
+		(pin "2"
+			(uuid "7bc949ab-ecf0-41fe-aa11-6c7b76e6d342")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Device__Fuse")
+		(at 617.22 490.22 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f62a4640-1fdc-4eb4-9247-14d281def80c")
+		(property "Reference" "F1"
+			(at 618.744 488.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Pyro Fuse"
+			(at 618.744 491.236 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 615.442 490.22 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 617.22 490.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 617.22 490.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9ac4468a-c826-434c-9e2c-2722e921cf5f")
+		)
+		(pin "2"
+			(uuid "35cca09f-8365-4fbe-8d37-2d449b9f8d95")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CellKeeper_Local:Relay__Fujitsu_FTR-LYAA005x")
+		(at 695.96 448.31 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f724bdaa-9ebe-4f17-85a6-f50364d699ee")
+		(property "Reference" "K4"
+			(at 694.69 434.34 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "FC Positive"
+			(at 701.802 436.88 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 697.23 436.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 699.77 430.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Relay, SPST Form A, vertical mount, 5-60V coil, 6A, 250VAC, 28 x 5 x 15mm"
+			(at 695.96 448.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "13"
+			(uuid "58eb4b98-7acb-46da-9af8-dc68a22762cc")
+		)
+		(pin "A2"
+			(uuid "16d2202a-262d-468f-baf7-ffe6a60e0ffd")
+		)
+		(pin "A1"
+			(uuid "d650115c-1f36-4d74-a7e9-d7f9558a82aa")
+		)
+		(pin "14"
+			(uuid "3fc6c57b-5a5f-4a9e-b4ee-0e214791d2bb")
+		)
+		(instances
+			(project "Precharge"
+				(path "/5d962221-5e0a-481f-afc5-67c7ec101fc1"
+					(reference "K4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
