@@ -188,17 +188,20 @@ LED_TUBE_FIT = {(91.329, 72.150): (5.2, 4.3), (87.329, 53.112): (5.2, 4.3)}
 # Penthouse brackets screw into the lid top above H3/H4: (x, y) in KiCad coordinates.
 VEH_MOUNTS = [(56.129276, 146.887018), (302.129276, 146.887018)]
 VEH_SEAT_ABOVE_PCB = 20.0   # bracket seat above the PCB top surface (original HVC: 17.4)
-VEH_HOLE_DEPTH = 16.0       # bracket hole depth below the seat; runs into the M3 pilot below
+VEH_HOLE_D, VEH_HOLE_DEPTH = 4.3, 16.0   # clearance bore below the seat; runs into the M3 pilot below
 
 # The bracket screw, measured from the original (photos, 2026-10-23): a thread-forming screw for
 # plastic, PT style with a 30 deg thread, flange head with an external hex-lobular drive. Its
-# thread is cut into the bracket holes (plus the core diameter on down to VEH_HOLE_DEPTH), and the
+# thread is cut into the bracket holes on top of the VEH_HOLE_D clearance bore, and the
 # screws appear in the KiCad lid model. SCREW_HEAD_GAP is the bracket tab: head underside above
 # the lid top. SCREW_FIT grows the cut thread radially (0 = the screw itself).
-SCREW_D, SCREW_CORE_D, SCREW_PITCH, SCREW_L = 4.9, 3.0, 1.8, 19.0
+SCREW_D, SCREW_CORE_D, SCREW_PITCH, SCREW_L = 5.0, 3.4, 1.8, 19.0
 SCREW_FLANK_DEG, SCREW_APEX_W = 30.0, 0.12
 SCREW_TIP_L, SCREW_TIP_D = 4.2, 1.0   # pointed tip cone (to the thread diameter); thread runs onto it
-SCREW_FLANGE_D, SCREW_FLANGE_T, SCREW_HEAD_AF, SCREW_HEAD_H = 9.8, 1.5, 5.6, 4.6
+SCREW_FLANGE_D, SCREW_FLANGE_T, SCREW_HEAD_H = 9.8, 1.5, 4.6
+# External Torx head (hexalobular, about an E6): across the lobes (measured 5.5), across the
+# valleys, and the lobe tip radius; the valley radius follows from tangency.
+SCREW_TORX_A, SCREW_TORX_B, SCREW_TORX_RE = 5.5, 4.0, 0.45
 SCREW_HEAD_GAP, SCREW_FIT = 6.0, 0.0
 SCREW_RGB = (0.75, 0.75, 0.76)
 VEH_BOSS_D = 20.0           # nothing on the board within 13.8 mm of H3/H4; merges into the walls
@@ -338,7 +341,7 @@ def board_screw(x, y):
 def bracket_screw(fit=0.0, head=True):
     """The penthouse bracket screw with its tip at the origin, pointing down (-Z is the tip end):
     a 30 deg thread swept along a helix on a core, both tapering into the pointed tip, under a
-    flange and hex head (a hexagon stands in for the hex-lobular drive). fit grows the thread and
+    flange and an external Torx head (torx_profile). fit grows the thread and
     core radially, for cutting the matching thread into the lid."""
     r_core, r_major = SCREW_CORE_D / 2 + fit, SCREW_D / 2 + fit
     root_w = SCREW_APEX_W + 2 * (r_major - r_core) * np.tan(np.radians(SCREW_FLANK_DEG / 2))
@@ -358,9 +361,31 @@ def bracket_screw(fit=0.0, head=True):
     screw = _one_solid((thread + core) & envelope)
     if head:
         screw += Pos(0, 0, SCREW_L) * Cylinder(SCREW_FLANGE_D / 2, SCREW_FLANGE_T, align=up)
-        screw += extrude(Pos(0, 0, SCREW_L + SCREW_FLANGE_T) * RegularPolygon(SCREW_HEAD_AF / np.sqrt(3), 6),
+        screw += extrude(Pos(0, 0, SCREW_L + SCREW_FLANGE_T) * torx_profile(SCREW_TORX_A, SCREW_TORX_B, SCREW_TORX_RE),
                          amount=SCREW_HEAD_H)
     return screw
+
+
+def torx_profile(a, b, re):
+    """External Torx (hexalobular) outline centred on the origin: six convex lobe arcs (tip radius
+    re, a across the lobes) joined by six concave valley arcs (b across the valleys), each pair
+    tangent. The valley radius ri is solved from that tangency."""
+    dl = a / 2 - re                                   # lobe arc centres
+    c30 = np.cos(np.radians(30))
+    # |lobe centre - valley centre| = re + ri, valley centre at b/2 + ri, 30 deg apart
+    ri = (dl ** 2 + (b / 2) ** 2 - 2 * dl * (b / 2) * c30 - re ** 2) / (2 * (re - b / 2 + dl * c30))
+    dv = b / 2 + ri
+    pol = lambda r, deg: np.array([r * np.cos(np.radians(deg)), r * np.sin(np.radians(deg))])  # noqa: E731
+    v = lambda q: Vector(q[0], q[1], 0)  # noqa: E731
+    edges = []
+    for k in range(6):
+        lobe, valley, nxt = pol(dl, 60 * k), pol(dv, 60 * k + 30), pol(dl, 60 * k + 60)
+        t1 = lobe + (valley - lobe) * re / (re + ri)          # lobe -> valley tangent point
+        t2 = nxt + (valley - nxt) * re / (re + ri)            # valley -> next lobe tangent point
+        t0 = lobe + (pol(dv, 60 * k - 30) - lobe) * re / (re + ri)
+        edges.append(Edge.make_three_point_arc(v(t0), v(pol(a / 2, 60 * k)), v(t1)))
+        edges.append(Edge.make_three_point_arc(v(t1), v(pol(b / 2, 60 * k + 30)), v(t2)))
+    return Face(Wire(edges))
 
 
 def _one_solid(shape):
@@ -453,7 +478,7 @@ def build_lid():
             w = VEH_INDENT_W / 2
             lid -= edge_cut("S", x - w, x + w, Z_SEAT, Z_TOP + 1, -(BY1 - y) - w)
         lid -= Pos(x, -y, SCREW_TIP_Z) * bracket_screw(SCREW_FIT, head=False)
-        lid -= cyl(x, -y, SCREW_CORE_D + 2 * SCREW_FIT, Z_SEAT - VEH_HOLE_DEPTH, SCREW_TIP_Z + SCREW_CORE_TIP_L)
+        lid -= cyl(x, -y, VEH_HOLE_D, Z_SEAT - VEH_HOLE_DEPTH, Z_TOP + 1)
     lid = _one_solid(lid).fix()   # the helical cut leaves loose tolerances; fix() settles them
 
     for label, x, y in BUTTONS:
@@ -796,8 +821,8 @@ def main():
     print(f"hardware: {n}x M3x{M3_SCREW:.0f} SHCS from below, self-tapping into the lid "
           f"({M3_ENGAGE:.1f} mm engagement{h34})")
     print(f"bracket seat {VEH_SEAT_ABOVE_PCB:.1f} mm above the PCB top, {Z_SEAT - Z_BOT:.1f} mm above "
-          f"the case bottom; holes threaded for the {SCREW_D} x {SCREW_PITCH} bracket screw, "
-          f"{VEH_HOLE_DEPTH:.0f} mm deep")
+          f"the case bottom; {VEH_HOLE_D} mm holes {VEH_HOLE_DEPTH:.0f} mm deep, with the "
+          f"{SCREW_D} x {SCREW_PITCH} bracket screw thread cut in")
     if args.check:
         check({"base": base, "lid": lid}, args.board)
 
