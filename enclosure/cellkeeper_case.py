@@ -114,7 +114,7 @@ S44B_CLR = 0.8
 BUTTONS = [("RST", 221.332609, 48.490518), ("BOOT", 228.122609, 48.450518),
            ("RST", 163.864276, 79.027018), ("BOOT", 170.654276, 78.987018)]
 BUTTON_TOP = 3.1
-BUTTON_LABEL_GAP = 2.3   # hole edge to label: RST left of its hole, BOOT right of its hole
+BUTTON_LABEL_GAP = 3.3   # hole centre to label (1.2 mm clear of the hole): RST left of its hole, BOOT right of its hole
 
 # J2 chassis-ground M3 terminal: screw centre, and the radius of the round-ended slot that opens
 # the lid above it, through the top and out to the south side.
@@ -227,11 +227,11 @@ M3_SCREW = 14.0
 STANDOFF_FLARE, STANDOFF_FLARE_H = 1.5, 5.0   # base standoff cone: extra radius at the floor, height
 PILLAR_FLARE = 1.5    # extra radius where the lid pillars meet the top plate
 
-TUBE_OD, TUBE_ID, TUBE_GAP = 5.2, 2.2, 1.3
+TUBE_OD, TUBE_ID, TUBE_GAP = 7.2, 4.2, 1.3   # button guide tubes: 1.5 mm wall
 
 DEBOSS = 0.6          # marking depth on the single-colour lid
 CASE_RGB, INLAY_RGB = (0.20, 0.21, 0.23), (0.95, 0.95, 0.95)   # KiCad 3D viewer colours
-INLAY = 0.2           # marking pocket depth and inlay thickness on the two-colour lid (1 layer)
+INLAY = 0.4           # marking pocket depth and inlay thickness on the two-colour parts (2 layers)
 SPLIT_X = 251.0       # between the J14 and J20 openings, clear of the labels and light holes
 BASE_SPLIT_X = 266.0  # the base splits further east, clear of the underside map
 UNDERSIDE_SCALE = 2.0  # underside map size vs the board's silkscreen; centred on the base
