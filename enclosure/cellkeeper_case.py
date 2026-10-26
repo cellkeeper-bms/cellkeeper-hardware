@@ -114,7 +114,7 @@ S44B_CLR = 0.8
 BUTTONS = [("RST", 221.332609, 48.490518), ("BOOT", 228.122609, 48.450518),
            ("RST", 163.864276, 79.027018), ("BOOT", 170.654276, 78.987018)]
 BUTTON_TOP = 3.1
-BUTTON_LABEL_GAP = 3.3   # hole centre to label (1.2 mm clear of the hole): RST left of its hole, BOOT right of its hole
+BUTTON_LABEL_GAP = 2.3   # hole centre to label (1.3 mm clear of the hole): RST left of its hole, BOOT right of its hole
 
 # J2 chassis-ground M3 terminal: screw centre, and the radius of the round-ended slot that opens
 # the lid above it, through the top and out to the south side.
@@ -180,7 +180,7 @@ LEDS = [
     (271.529, 80.287),
 ]
 LED_TOP = 2.7         # PCB bottom to LED top
-LED_HOLE_D, LED_TUBE_OD, LED_GAP = 2.2, 5.2, 0.5   # same tunnel as the button guide tubes
+LED_HOLE_D, LED_TUBE_OD, LED_GAP = 2.2, 5.2, 0.5   # same tube OD as the button guide tubes
 # (tube OD, tube bottom) where the full tube would hit a neighbour: D14/D36 stop above SMA diodes
 # (3.8 tall).
 LED_TUBE_FIT = {(91.329, 72.150): (5.2, 4.3), (87.329, 53.112): (5.2, 4.3)}
@@ -227,7 +227,7 @@ M3_SCREW = 14.0
 STANDOFF_FLARE, STANDOFF_FLARE_H = 1.5, 5.0   # base standoff cone: extra radius at the floor, height
 PILLAR_FLARE = 1.5    # extra radius where the lid pillars meet the top plate
 
-TUBE_OD, TUBE_ID, TUBE_GAP = 7.2, 4.2, 1.3   # button guide tubes: 1.5 mm wall
+TUBE_OD, TUBE_ID, TUBE_GAP = 5.2, 2.0, 1.3   # button guide tubes: 2.0 mm pin hole, 1.6 mm wall
 
 DEBOSS = 0.6          # marking depth on the single-colour lid
 CASE_RGB, INLAY_RGB = (0.20, 0.21, 0.23), (0.95, 0.95, 0.95)   # KiCad 3D viewer colours
