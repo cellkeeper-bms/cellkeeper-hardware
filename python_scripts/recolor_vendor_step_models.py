@@ -20,11 +20,9 @@ PROJECT = Path(__file__).resolve().parents[1]
 SHAPES_DIR = PROJECT / "lib" / "CellKeeper.3dshapes"
 
 # Vendor STEP files that ship without colors, so KiCad draws them default grey.
-# Each is a single solid; give it the real housing color.
-MODELS = {
-    # J17, TE 173864-1: natural (white) nylon housing.
-    "CONN_173864-1_TYC_Empty_Pins.step": (0.94, 0.93, 0.88),
-}
+# Each is a single solid; give it the real housing color. None at the moment: J17's TE 173864-1
+# model is now built with its colors by generate_te_173864_1_model.py.
+MODELS: dict[str, tuple[float, float, float]] = {}
 
 # Single solids with the terminals fused into the housing: housing color, plus a metal color for
 # the terminal faces (found as thin sheet metal, see metal_faces).
