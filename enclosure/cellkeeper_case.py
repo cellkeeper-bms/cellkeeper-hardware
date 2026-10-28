@@ -25,7 +25,7 @@ Lid markings (the board's logo, the HV warning and the button labels) come two w
 layer (lid_2color: the STEP holds both bodies; load it as one object with two parts).
 The base underside carries the board's back-silkscreen map (UK + Ireland, Hawaii) the same two
 ways: debossed (base) or as a 0.2 mm pocket plus inlay body (base_2color). LED tunnels are left
-open (clear-filament fills that were tried are kept in archive/light_windows.py).
+open (clear-filament fills were tried: see archive/light_windows.py in git history before rev1.2).
 Print files go to output/print as STEP and STL, already oriented for printing; the split pieces
 and keys go to output/print/split.
 output/kicad holds coloured base/lid/inlay STEPs in board position for the board-only

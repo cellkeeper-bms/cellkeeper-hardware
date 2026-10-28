@@ -37,3 +37,14 @@ fp-info-cache
 
 # Local project settings
 *.kicad_prl
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Schematic PDF plot (attached to each release instead)
+CellKeeper/CellKeeper.pdf
+
+# Enclosure print outputs from enclosure/cellkeeper_case.py (attached to each release instead)
+enclosure/output/print/
+enclosure/output/cellkeeper_case_assembly.step
