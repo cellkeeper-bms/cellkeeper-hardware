@@ -7,11 +7,15 @@
 
 Run enclosure/cellkeeper_case.py first if the case changed, so ENC1's models are current. Close
 nothing in KiCad: the board is only read. Set KICAD_CLI if kicad-cli is not at the KiCad 10 path.
+
+Both views show the board as assembled: DNP parts lose their 3D models in the rendered copy, so
+the result doesn't depend on the 3D viewer's DNP filter in KiCad's settings.
 """
 
 from __future__ import annotations
 
 import os
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -31,10 +35,8 @@ VIEWS = {
 }
 
 
-def enclosure_span(text: str) -> tuple[int, int]:
-    """Start of the ENC1 footprint's line and the index just past its closing parenthesis."""
-    i = text.index(ENCLOSURE_FP)
-    start = text.rfind("\n", 0, i) + 1
+def block_end(text: str, i: int) -> int:
+    """Index just past the s-expression that opens at text[i]."""
     depth, j = 0, i
     while True:
         c = text[j]
@@ -43,11 +45,34 @@ def enclosure_span(text: str) -> tuple[int, int]:
         elif c == ")":
             depth -= 1
             if depth == 0:
-                break
+                return j + 1
         elif c == '"':
             j = text.index('"', j + 1)
         j += 1
-    return start, j + 1
+
+
+def enclosure_span(text: str) -> tuple[int, int]:
+    """Start of the ENC1 footprint's line and the index just past its closing parenthesis."""
+    i = text.index(ENCLOSURE_FP)
+    return text.rfind("\n", 0, i) + 1, block_end(text, i)
+
+
+def without_dnp_models(text: str) -> str:
+    """The board file text with the 3D models of DNP footprints removed."""
+    out, pos = [], 0
+    for m in re.finditer(r"\n\t\(footprint ", text):
+        if m.start() < pos:
+            continue
+        start = m.start() + 2
+        end = block_end(text, start)
+        block = text[start:end]
+        attr = re.search(r"\n\t\t\(attr ([^)]*)\)", block)
+        if attr and "dnp" in attr.group(1).split():
+            for model in reversed(list(re.finditer(r"\n\t\t\(model ", block))):
+                block = block[:model.start()] + block[block_end(block, model.start() + 3):]
+        out += [text[pos:start], block]
+        pos = end
+    return "".join(out) + text[pos:]
 
 
 def without_enclosure(text: str) -> str:
@@ -64,30 +89,33 @@ def with_enclosure_shown(text: str) -> str:
     return text[:start] + block + text[end:]
 
 
-def render(board: Path, args: list[str], out: Path) -> None:
-    """Render on a transparent background, then crop to the board and flatten onto white."""
+def render(board: Path, args: list[str], out: Path, shadow: bool = True) -> None:
+    """Render on a transparent background, then crop to the board and flatten onto white.
+    Without shadow, the semi-transparent floor shadow is dropped (only near-opaque pixels kept)."""
     raw = out.with_suffix(".raw.png")
     subprocess.run([str(KICAD_CLI), "pcb", "render", "-o", str(raw), "--background", "transparent",
                     "--quality", "high", "--define-var", f"KIPRJMOD={BOARD.parent}", *args, str(board)],
                    check=True)
     im = Image.open(raw).convert("RGBA")
     raw.unlink()
+    if not shadow:
+        im.putalpha(im.getchannel("A").point(lambda a: 255 if a >= 250 else 0))
     left, top, right, bottom = im.getchannel("A").point(lambda a: 255 if a > 8 else 0).getbbox()
     pad = 40
     im = im.crop((max(left - pad, 0), max(top - pad, 0), min(right + pad, im.width), min(bottom + pad, im.height)))
     flat = Image.new("RGBA", im.size, (255, 255, 255, 255))
     flat.alpha_composite(im)
     flat.convert("RGB").save(out)
-    print(f"wrote {out.relative_to(PROJECT)} {flat.size[0]}x{flat.size[1]}")
+    print(f"wrote {out.name} {flat.size[0]}x{flat.size[1]}")
 
 
 def main() -> None:
     text = BOARD.read_text(encoding="utf-8")
     with tempfile.TemporaryDirectory() as tmp:
         bare = Path(tmp) / "bare.kicad_pcb"
-        bare.write_text(without_enclosure(text), encoding="utf-8", newline="")
+        bare.write_text(without_dnp_models(without_enclosure(text)), encoding="utf-8", newline="")
         full = Path(tmp) / "full.kicad_pcb"
-        full.write_text(with_enclosure_shown(text), encoding="utf-8", newline="")
+        full.write_text(without_dnp_models(with_enclosure_shown(text)), encoding="utf-8", newline="")
         boards = {"bare": bare, "full": full}
         for name, (which, args) in VIEWS.items():
             render(boards[which], args, GRAPHICS / name)
