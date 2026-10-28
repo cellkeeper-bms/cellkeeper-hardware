@@ -31,8 +31,8 @@ VIEWS = {
 }
 
 
-def without_enclosure(text: str) -> str:
-    """The board file text with the ENC1 footprint block removed."""
+def enclosure_span(text: str) -> tuple[int, int]:
+    """Start of the ENC1 footprint's line and the index just past its closing parenthesis."""
     i = text.index(ENCLOSURE_FP)
     start = text.rfind("\n", 0, i) + 1
     depth, j = 0, i
@@ -47,7 +47,21 @@ def without_enclosure(text: str) -> str:
         elif c == '"':
             j = text.index('"', j + 1)
         j += 1
-    return text[:start] + text[j + 1:]
+    return start, j + 1
+
+
+def without_enclosure(text: str) -> str:
+    """The board file text with the ENC1 footprint block removed."""
+    start, end = enclosure_span(text)
+    return text[:start] + text[end:]
+
+
+def with_enclosure_shown(text: str) -> str:
+    """The board file text with ENC1 no longer excluded from position files. The 3D viewer's
+    "not in position files" filter (a KiCad user setting) would otherwise hide the case."""
+    start, end = enclosure_span(text)
+    block = text[start:end].replace(" exclude_from_pos_files", "", 1)
+    return text[:start] + block + text[end:]
 
 
 def render(board: Path, args: list[str], out: Path) -> None:
@@ -72,7 +86,9 @@ def main() -> None:
     with tempfile.TemporaryDirectory() as tmp:
         bare = Path(tmp) / "bare.kicad_pcb"
         bare.write_text(without_enclosure(text), encoding="utf-8", newline="")
-        boards = {"bare": bare, "full": BOARD}
+        full = Path(tmp) / "full.kicad_pcb"
+        full.write_text(with_enclosure_shown(text), encoding="utf-8", newline="")
+        boards = {"bare": bare, "full": full}
         for name, (which, args) in VIEWS.items():
             render(boards[which], args, GRAPHICS / name)
 
