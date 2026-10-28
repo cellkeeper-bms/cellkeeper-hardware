@@ -7,8 +7,7 @@ the Rev 1.1 schematic and board (2026-10-20) with suggested changes.
 
 - Title and safety note now say **v1.1** (were "Rev1").
 - Top image replaced: `graphics/CellKeeper_top.png` is the current bare v1.1 board, top-down.
-  The old panelised render `graphics/CellKeeperPCB.png` is no longer used by the README (it still
-  shows the precharge and isoSPI boards attached; delete it if nothing else needs it).
+  The old panelised render `graphics/CellKeeperPCB.png` was deleted on 2026-10-28.
 - New **Enclosure** section with `graphics/CellKeeper_enclosure.png` (case and board from the
   right front), and an `enclosure/` row in Repository Contents.
 - **Getting Started** section removed (KiCad install/open steps and the KiKit panelising note).
@@ -43,7 +42,7 @@ Notes:
 ## README vs the Rev 1.1 design
 
 Sources: `CellKeeper/CellKeeper.kicad_sch` (notes, labels), `CellKeeper/CellKeeper.kicad_pcb`
-(pad nets, silkscreen), `CellKeeper/production/CellKeeper_REV1.1_bom.csv`.
+(pad nets, silkscreen), `CellKeeper/production/CellKeeper_REV1.1/CellKeeper_REV1.1_bom.csv`.
 U14 is the main BMS MCU, U20 the supervisor (silkscreen "BMS" and "Supervisor").
 
 ### Intro
@@ -85,7 +84,8 @@ connectors and mounting points". Confirm the exact pack/vehicle wording.
 ### Repository Contents
 
 - `docs/` (design plans, these notes) isn't listed.
-- `CellKeeper/production/` holds both REV1 and REV1.1 outputs; say which is current.
+- `CellKeeper/production/` holds one folder per ordered revision (REV1, REV1.1); the fab toolkit
+  writes the next revision's files at the top level until it is ordered and archived.
 - `python_scripts/` now includes `render_readme_images.py` (README images) and
   `recolor_vendor_step_models.py` (3D model colours).
 
@@ -97,7 +97,7 @@ setup" (PCS/experimental parts); keep the "untested" wording until those are ver
 ## Checklist for the next README update
 
 1. Re-render the images (above) after board or case changes, and check them before committing.
-2. Re-check the Overview against the BOM (`production/*_bom.csv`) for part changes.
+2. Re-check the Overview against the BOM (`production/*/*_bom.csv`) for part changes.
 3. Keep the version in the title, the safety note and the image alt text in step.
 4. Confirm the open questions above: what drives `CTR_EN`, "inrush limiting", the Tesla
    pack/vehicle wording. (Supply range settled as 13-16 V; the board silkscreen still says 12-16V.)
