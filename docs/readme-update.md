@@ -25,7 +25,7 @@ python python_scripts/render_readme_images.py
 | Image | View | How |
 |-------|------|-----|
 | `graphics/CellKeeper_top.png` | bare board, top-down | renders a temporary copy of the board with the ENC1 enclosure footprint removed |
-| `graphics/CellKeeper_enclosure.png` | board in its case, right front | renders the real board with `--rotate -52,0,-32` |
+| `graphics/CellKeeper_enclosure.png` | board in its case, right front | renders a temporary copy with `--rotate -52,0,-32`, ENC1 un-excluded from position files so the 3D viewer's "not in position files" filter can't hide the case |
 
 Both are rendered on a transparent background, cropped to the board with a 40 px margin and
 flattened onto white. The board file is only read, so KiCad can stay open (it renders the last
