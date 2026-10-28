@@ -18,7 +18,7 @@ after it (`rev1.2`, ...). When a revision is ordered:
    | `CellKeeper_REV<rev>_bom.csv` | JLCPCB BOM (DNP parts left out) |
    | `CellKeeper_REV<rev>_positions.csv` | JLCPCB pick-and-place (CPL) |
    | `CellKeeper_REV<rev>_schematic.pdf` | schematic |
-   | `CellKeeper_REV<rev>_board.pdf` | board print at 1:1 on the 400 x 250 mm sheet (fits A3 at 100 %): top, then bottom seen from below; copper pale, silkscreen dark |
+   | `CellKeeper_REV<rev>_board.pdf` | pages 1-2: 3D views of the top and bottom as assembled (DNP parts left off); pages 3-4: board prints at 1:1 on the 400 x 250 mm sheet (A3 at 100 %), top then bottom seen from below, copper pale and silkscreen dark |
    | `CellKeeper_REV<rev>_enclosure_print_files.zip` | print-oriented STEP/STL case files, bracket screw, assembly STEP, Bambu project |
 
    The schematic and board stay separate PDFs: the schematic is for reading on screen, the board

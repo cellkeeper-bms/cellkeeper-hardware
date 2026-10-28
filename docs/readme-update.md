@@ -27,7 +27,8 @@ python python_scripts/render_readme_images.py
 | `graphics/CellKeeper_enclosure.png` | board in its case, right front | renders a temporary copy with `--rotate -52,0,-32`, ENC1 un-excluded from position files so the 3D viewer's "not in position files" filter can't hide the case |
 
 Both are rendered on a transparent background, cropped to the board with a 40 px margin and
-flattened onto white. The board file is only read, so KiCad can stay open (it renders the last
+flattened onto white. DNP footprints lose their 3D models in the rendered copies, so the images
+show the board as assembled whatever KiCad's 3D viewer DNP filter is set to. The board file is only read, so KiCad can stay open (it renders the last
 saved state). `KIPRJMOD` is passed to kicad-cli so the temporary copy still finds the project's
 3D models. Set `KICAD_CLI` if kicad-cli isn't at `C:\Program Files\KiCad\10.0\bin\kicad-cli.exe`.
 

@@ -4,7 +4,8 @@
     CellKeeper_REV<rev>_bom.csv                   JLCPCB BOM
     CellKeeper_REV<rev>_positions.csv             JLCPCB CPL
     CellKeeper_REV<rev>_schematic.pdf             schematic
-    CellKeeper_REV<rev>_board.pdf                 board print, 1:1: top, and bottom seen from below
+    CellKeeper_REV<rev>_board.pdf                 3D views of the top and bottom as assembled, then
+                                                  board prints at 1:1: top, and bottom seen from below
     CellKeeper_REV<rev>_enclosure_print_files.zip enclosure/output print files, if they exist
 
     python python_scripts/export_release_files.py
@@ -27,6 +28,9 @@ import zipfile
 from pathlib import Path
 
 import pymupdf
+from PIL import Image
+
+import render_readme_images as renders
 
 PROJECT = Path(__file__).resolve().parents[1]
 BOARD_DIR = PROJECT / "CellKeeper"
@@ -52,6 +56,11 @@ SIDES = [
     ("Top", "F.Cu,F.SilkS,Edge.Cuts", []),
     ("Bottom, seen from below", "B.Cu,B.SilkS,Edge.Cuts", ["--mirror"]),
 ]
+VIEWS_3D = [
+    # page label, kicad-cli render side
+    ("Top, 3D view as assembled (DNP parts left off)", "top"),
+    ("Bottom, 3D view as assembled", "bottom"),
+]
 ENCLOSURE_FILES = ["print", "cellkeeper_case_assembly.step", "bracket_screw.step", "enclosure_bambu.3mf"]
 
 
@@ -75,6 +84,24 @@ def production_files(rev: str, out: Path) -> None:
         shutil.copy2(f, out / f"{name}{dest}")
 
 
+def render_pages(doc: pymupdf.Document, tmp: Path, size: pymupdf.Rect) -> None:
+    """Append a page per 3D view, the image fitted inside a margin, on pages of the given size."""
+    text = BOARD.read_text(encoding="utf-8")
+    if renders.ENCLOSURE_FP in text:
+        text = renders.without_enclosure(text)
+    board = tmp / "render.kicad_pcb"
+    board.write_text(renders.without_dnp_models(text), encoding="utf-8", newline="")
+    renders.BOARD = BOARD  # KIPRJMOD for the project's 3D models
+    for i, (label, side) in enumerate(VIEWS_3D):
+        png = tmp / f"render{i}.png"
+        renders.render(board, ["--side", side, "--width", "4000", "--height", "2200"], png, shadow=False)
+        jpg = tmp / f"render{i}.jpg"
+        Image.open(png).convert("RGB").save(jpg, quality=90)
+        page = doc.new_page(width=size.width, height=size.height)
+        page.insert_image(size + (40, 70, -40, -40), filename=str(jpg), keep_proportion=True)
+        page.insert_text((40, 50), label, fontsize=16, fontname="helv")
+
+
 def board_pdf(out: Path) -> None:
     with tempfile.TemporaryDirectory() as tmp:
         colors = Path(tmp) / "config" / "10.0" / "colors"
@@ -82,14 +109,17 @@ def board_pdf(out: Path) -> None:
         (colors / "CellKeeperPrint.json").write_text(json.dumps(PRINT_THEME), encoding="utf-8")
         env = {**os.environ, "KICAD_CONFIG_HOME": str(Path(tmp) / "config")}
         doc = pymupdf.open()
+        prints = pymupdf.open()
         for i, (label, layers, extra) in enumerate(SIDES):
             page_pdf = Path(tmp) / f"side{i}.pdf"
             cli("pcb", "export", "pdf", "--mode-single", "-l", layers, "--include-border-title",
                 "--theme", "CellKeeperPrint", "--drill-shape-opt", "1", *extra,
                 "-o", str(page_pdf), str(BOARD), env=env)
             with pymupdf.open(page_pdf) as side:
-                doc.insert_pdf(side)
-            doc[-1].insert_text((40, 50), label, fontsize=16, fontname="helv")
+                prints.insert_pdf(side)
+            prints[-1].insert_text((40, 50), f"{label}, 1:1", fontsize=16, fontname="helv")
+        render_pages(doc, Path(tmp), prints[0].rect)
+        doc.insert_pdf(prints)
         doc.save(out)
 
 
