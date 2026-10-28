@@ -48,3 +48,6 @@ CellKeeper/CellKeeper.pdf
 # Enclosure print outputs from enclosure/cellkeeper_case.py (attached to each release instead)
 enclosure/output/print/
 enclosure/output/cellkeeper_case_assembly.step
+
+# Release files from python_scripts/export_release_files.py
+release/
