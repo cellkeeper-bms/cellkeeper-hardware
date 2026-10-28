@@ -3,6 +3,17 @@
 How the README is put together, how to refresh its images, and a review of the README against
 the Rev 1.1 schematic and board (2026-10-20) with suggested changes.
 
+## What was changed on 2026-10-28
+
+- Overview rewritten from the review below, checked against the rev 1.1 netlist. Answers to its
+  open questions: `CTR_EN` is driven by the supervisor (U20 GPIO14 through R141, R144 pull-down,
+  D48 "Supervisor Enable"); "inrush limiting" meant firmware PWM economising of the hold current;
+  the intro stays generic with a line about the Tesla penthouse fit; the supply range is 13-16 V
+  (the board silkscreen already says 13-16V).
+- The revision strap is now on GPIO47/ADC7 (R75/R76), not GPIO44-46.
+- A releases paragraph, `docs/` in Repository Contents, and "open tunnels" (not light pipes)
+  over the LEDs in the Enclosure section.
+
 ## What was changed on 2026-10-20
 
 - Title and safety note now say **v1.1** (were "Rev1").
@@ -100,5 +111,4 @@ setup" (PCS/experimental parts); keep the "untested" wording until those are ver
 1. Re-render the images (above) after board or case changes, and check them before committing.
 2. Re-check the Overview against the BOM (a fresh fab toolkit export, or the release's `*_bom.csv`) for part changes.
 3. Keep the version in the title, the safety note and the image alt text in step.
-4. Confirm the open questions above: what drives `CTR_EN`, "inrush limiting", the Tesla
-   pack/vehicle wording. (Supply range settled as 13-16 V; the board silkscreen still says 12-16V.)
+4. Update the releases paragraph (last ordered revision, current work branch).
