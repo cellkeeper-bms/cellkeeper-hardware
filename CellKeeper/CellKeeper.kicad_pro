@@ -214,11 +214,13 @@
       ],
       "track_widths": [
         0.0,
+        0.0,
         0.15,
         0.2,
         0.3,
         0.4,
         0.6,
+        1.6,
         2.0,
         2.4,
         3.0
@@ -890,7 +892,7 @@
         "uuid": "5d962221-5e0a-481f-afc5-67c7ec101fc1"
       }
     ],
-    "used_designators": "#PWR1-206,#SYM1,1/2V1,3v1,5V1,A1,BT1-8,C1-116,Cell1-3,D1-51,F1-4,FB1-6,FL1-2,GND1,GPIO1-3,GPIO46-47,GPIO\\-48-49,H1-15,J1-24,JP1-37,K1-10,L1-7,Q1-4,Q6-8,R1-155,RevisionS1,SW1-4,TH1-6,TP1-49,TR1-2,U1-26,Y1-2,reV1",
+    "used_designators": "#PWR1-206,#SYM1,1/2V1,3v1,5V1,A1,BT1-8,C1-116,Cell1-3,D1-51,F1-4,FB1-6,FL1-2,GND1,GPIO1-3,GPIO46-47,GPIO\\-48-49,H1-15,J1-24,JP1-39,K1-10,L1-7,Q1-4,Q6-8,R1-155,RevisionS1,SW1-4,TH1-6,TP1-49,TR1-2,U1-26,Y1-2,reV1",
     "variants": []
   },
   "sheets": [

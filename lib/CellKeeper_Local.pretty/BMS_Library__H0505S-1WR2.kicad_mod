@@ -77,7 +77,7 @@
 	(attr through_hole)
 	(fp_rect
 		(start -7 -2.1)
-		(end 2.8 17.4)
+		(end 2.8 18)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -100,7 +100,7 @@
 	)
 	(fp_rect
 		(start -7.15 -2.25)
-		(end 2.95 17.65)
+		(end 2.95 18.25)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -111,7 +111,7 @@
 	)
 	(fp_poly
 		(pts
-			(xy -7 -0.8) (xy -7 17.4) (xy 2.8 17.4) (xy 2.8 -2.1) (xy -5.7 -2.1)
+			(xy -7 -0.8) (xy -7 18) (xy 2.8 18) (xy 2.8 -2.1) (xy -5.7 -2.1)
 		)
 		(stroke
 			(width 0.1)
