@@ -3,7 +3,8 @@
 `main` holds the last revision that was ordered. Work on the next one happens on a branch named
 after it (`rev1.2`, ...). When a revision is ordered:
 
-1. In KiCad, run the fab toolkit (archive name `CellKeeper REV<rev>`), close KiCad, and commit.
+1. In KiCad, run the fab toolkit (archive name `CellKeeper REV<rev>`), close KiCad, and commit the
+   KiCad files. The toolkit's `production/` folder is git-ignored: the release carries those files.
 2. Collect the release files into `release/REV<rev>/` (git-ignored):
 
    ```
@@ -28,6 +29,5 @@ after it (`rev1.2`, ...). When a revision is ordered:
    ```
    gh release create rev<rev> --verify-tag --latest --title "Revision <rev>" --notes-file notes.md release/REV<rev>/*
    ```
-4. Move the revision's production files into `CellKeeper/production/CellKeeper_REV<rev>/` and
-   start the next branch, bumping the title blocks, the silkscreen REV text and the fab toolkit's
+4. Start the next branch, bumping the title blocks, the silkscreen REV text and the fab toolkit's
    archive name.

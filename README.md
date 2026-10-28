@@ -22,7 +22,7 @@ connect to the rest of the system by wires and lugs.
 
 | Path | Description |
 |------|-------------|
-| `CellKeeper/` | Main controller board (`CellKeeper.kicad_pro`), with each ordered revision's Gerbers, BOM and CPL in `production/CellKeeper_REV<n>/` |
+| `CellKeeper/` | Main controller board (`CellKeeper.kicad_pro`). Each ordered revision's Gerbers, BOM, CPL, schematic and board PDFs are on the [releases](https://github.com/cellkeeper-bms/cellkeeper-hardware/releases) page |
 | `isoSPI-Hat/` | isoSPI hat for a Raspberry Pi Pico: SP3485 / AM26LV32 / HM2113 transformer to the BMB connector |
 | `Precharge/` | Precharge board: six PTCs (three parallel strings of two) between M8 lugs, plus the HV system wiring diagram |
 | `lib/` | Shared `CellKeeper_Local` symbol and footprint libraries and `CellKeeper.3dshapes` 3D models |
