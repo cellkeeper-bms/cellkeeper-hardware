@@ -10,7 +10,7 @@
     python python_scripts/export_release_files.py
 
 The revision comes from the board's title block. Run the fab toolkit first; its files are read
-from production/CellKeeper_REV<rev>/ once archived there, else from the top of production/.
+from the top of production/ (git-ignored), or from production/CellKeeper_REV<rev>/ if moved there.
 The board PDF uses its own colour theme through a temporary KiCad config, so KiCad's settings
 are not touched. Set KICAD_CLI if kicad-cli is not at the KiCad 10 path.
 """

@@ -51,3 +51,6 @@ enclosure/output/cellkeeper_case_assembly.step
 
 # Release files from python_scripts/export_release_files.py
 release/
+
+# Fab toolkit output (the ordered files are attached to each release instead)
+*/production/
