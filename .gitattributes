@@ -1,0 +1,3 @@
+# Text files are stored and checked out with LF: KiCad and the scripts write LF, so this keeps
+# Windows checkouts (core.autocrlf=true) from flipping them to CRLF and back.
+* text=auto eol=lf
